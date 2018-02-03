@@ -3,7 +3,7 @@
 from bda_hubapi import HubAPI
 import time
 ### Local Parameters == You must update these for this script to run
-ENDPOINT ='https://bdhub-01.bdhub.crate.farm:443'
+ENDPOINT ='https://bdhub-01.bdhub.crate.farm:443/'
 USERNAME = 'sysadmin'
 PASSWORD = 'blackduck'
 ##### +++++++++++++++++++++++++++++++
@@ -15,6 +15,8 @@ hub.authenticate(USERNAME, PASSWORD)
 
 #Prompt for the project name
 
+
+#Creates Report
 #Get the project JSON from Hub
 projects = hub.getProjects()
 items = projects['items']

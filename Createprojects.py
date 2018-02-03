@@ -3,8 +3,8 @@ import time
 
 ### Local Parameters == You must update these for this script to run
 ENDPOINT = 'https://bdhub-01.bdhub.crate.farm:443'
-USERNAME = 'srkontha'
-PASSWORD = 'proBook1$.'
+USERNAME = 'sysadmin'
+PASSWORD = 'blackduck'
 ##### +++++++++++++++++++++++++++++++
 # Create an instance of HubAPI with your endpoint
 hub = HubAPI(ENDPOINT)

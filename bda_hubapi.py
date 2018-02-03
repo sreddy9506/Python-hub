@@ -34,6 +34,14 @@ class HubAPI:
                 return meta['links'][i]['href']
         print( "ERROR: getLink(" + tag +') failed. Tag not found')
         return 0
+
+    #Helper method to get Hub API links from Response
+    #Params -- self - required pythont parameter
+    #          meta  - the meta section of an API Response
+    #          tag   -  the name of the link to get
+    def getversionLink(self, items):
+        for i in range(len(items['href'])):
+            return items['href'][i]
     #Authenticates the session
     def authenticate( self, username, password):
         # Username and password will be sent in body of post request
