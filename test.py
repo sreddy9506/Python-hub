@@ -35,22 +35,10 @@ VersionLink = hub.getLink(project_metaData, 'versions')
 
 #Get the version JSON from Hub
 versionData = hub.getVersions(VersionLink)
-
-
+res = []
+versionmetaData = []
+for i in range(0,len(versionData['items'][0]['_meta']) -1):
+    res = versionData['items'][i]['_meta']['href']
+    versionmetaData.append(res)
 #Get the meta section of the version
-version_metaData = hub.getversionLink(versionData)
-print(version_metaData[0])
-i = 0
-for i in range(len(version_metaData)):
-    reportLink = hub.getLink(version_metaData, 'versionReport')
-    report = ''
-    while report is not 'done':
-        reportsList = hub.getReports(reportLink)
-        mostRecentReport = reportsList['items'][0]
-        if 'finishedAt' in mostRecentReport:
-            report = 'done'
-        else:
-            time.sleep(3)
-        i += 1
-    downloadLink = hub.getLink(mostRecentReport['_meta'],'download')
-    hub.downloadReport(downloadLink)
+print versionmetaData[1]

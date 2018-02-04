@@ -39,9 +39,16 @@ class HubAPI:
     #Params -- self - required pythont parameter
     #          meta  - the meta section of an API Response
     #          tag   -  the name of the link to get
-    def getversionLink(self, items):
-        for i in range(len(items['href'])):
-            return items['href'][i]
+
+    def getversionLink(self, meta):
+        for i in range(len(meta)):
+            return meta['items'][i]['_meta']['href']
+        return 0
+
+    def getversionLink1(self, meta):
+        i= 0
+        for i in range(len(meta)):
+            return meta[i]['_meta']['href']
     #Authenticates the session
     def authenticate( self, username, password):
         # Username and password will be sent in body of post request
