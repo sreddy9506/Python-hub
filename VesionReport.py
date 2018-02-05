@@ -20,43 +20,51 @@ projectName = raw_input('Please enter the name of a valid project in the Black D
 #Get the project JSON from Hub
 projectData = hub.getProjects(q='name:'+projectName)
 
-
 # Get meta section for parseing
 #Python dictionarys make it easy to traverse JSON data
 #In this case we want the '_meta' section from the first entry of the 'items' list
 project_metaData = projectData['items'][0]['_meta']
 
-#Get link to Cannonical version
-#canVersionLink = hub.getLink(project_metaData, 'canonicalVersion')
-
-#Get link to Cannonical version
+#Get link to version
 VersionLink = hub.getLink(project_metaData, 'versions')
 
-
-#Get the version JSON from Hub
+#From the version JSON from Hub.
+#We will grab version id and store
 versionData = hub.getVersions(VersionLink)
 res = []
 v = []
 for i in range(len(versionData['items'])):
     res = versionData['items'][i]['_meta']['href']
     v.append(res)
-#Get the meta section of the version
-versionMetaData = v
+#Variable
+versionMetaData = v #Store the version id value
 reportLink = []
 reportsList = []
 mostRecentReport = []
-rLink = []
 VData = []
-for i in range(0,len(versionMetaData)-1):
-#    VData = versionMetaData[i]
-#    print (VData)
-#    print ("second")
+#Iterating trough all version id and get the report id link for all
+for i in range(len(versionMetaData)):
     rLink = hub.getVersions(versionMetaData[i])
-for j in range(0,len(reportLink)-1):
-        if reportLink != reportLink.empty:
-            versionReport = hub.getLink(reportLink['_meta'], 'versionReport')
-            print versionReport
+    reportLink.append(rLink)
+VMetaReport = []
+vReport = []
+for j in range(len(reportLink)):
+    VMetaReport = hub.getLink(reportLink[j]['_meta'], 'versionReport')
+#    vReport.append(VMetaReport)
+    hub.generateReport(VMetaReport)
+    # Sometimes it can take some time for the report to run.
+    # We will check with the hub once per second to see if the report is complete
+    # We know that the report is complete when the finished at key has a time value and
+    # not an empty string.
+    report = ''
+    reportsList = hub.getReports(VMetaReport)
+    while report is not 'done':
+        mostRecentReport = reportsList['items'][0]
+        if 'finishedAt'or 'updatedAt' in mostRecentReport:
+            report = 'done'
         else:
-            print("no url")
-
-
+            time.sleep(1)
+    for i in range(len(reportsList)):
+        mostRecentReport = reportsList['items'][i]
+        downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
+        hub.downloadReport(downloadLink)

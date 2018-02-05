@@ -39,16 +39,12 @@ class HubAPI:
     #Params -- self - required pythont parameter
     #          meta  - the meta section of an API Response
     #          tag   -  the name of the link to get
-
-    def getversionLink(self, meta):
-        for i in range(len(meta)):
-            return meta['items'][i]['_meta']['href']
+    def getreportLink(self, meta, tag):
+        for i in range(len(meta['links'])):
+            if meta['links'][i]['rel'] == tag:
+                return meta['links'][i]['href']
+        print( "ERROR: getLink(" + tag +') failed. Tag not found')
         return 0
-
-    def getversionLink1(self, meta):
-        i= 0
-        for i in range(len(meta)):
-            return meta[i]['_meta']['href']
     #Authenticates the session
     def authenticate( self, username, password):
         # Username and password will be sent in body of post request
@@ -106,7 +102,7 @@ class HubAPI:
         else:
             print("Error: bad request in getReports")
     #Downloads the report from reportURL to dest
-    def downloadReport(self, reportURL, dest='report.zip'):
+    def downloadReport(self, reportURL, dest=''):
         response = self.aSession.get(reportURL)
         with open(dest, 'wb') as output:
             for chunk in response.iter_content(2000):

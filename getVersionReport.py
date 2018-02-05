@@ -26,6 +26,7 @@ projectData = hub.getProjects(q='name:'+projectName)
 #In this case we want the '_meta' section from the first entry of the 'items' list
 project_metaData = projectData['items'][0]['_meta']
 
+print project_metaData
 #Get link to Cannonical version
 canVersionLink = hub.getLink(project_metaData, 'canonicalVersion')
 
