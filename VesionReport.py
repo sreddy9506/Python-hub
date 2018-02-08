@@ -48,23 +48,34 @@ for i in range(len(versionMetaData)):
     reportLink.append(rLink)
 VMetaReport = []
 vReport = []
+report = ''
 for j in range(len(reportLink)):
     VMetaReport = hub.getLink(reportLink[j]['_meta'], 'versionReport')
+    reportsList = hub.getReports(VMetaReport)
+    if len(reportsList['items']) == 0:
+        hub.generateReport(VMetaReport)
+        reportsListjson = hub.getReports(VMetaReport)
+        while report is not 'done':
+            mostRecentReport = reportsListjson['items'][0]
+            if 'finishedAt' in mostRecentReport:
+                report = 'done'
+                break
+            else:
+                time.sleep(1)
+    if len(reportsList['items']) > 0:
+        for i in range(len(reportsList)):
+            mostRecentReport = reportsList['items'][i]
+            downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
+            filename = (projectName +".zip")
+            print(filename)
+            hub.downloadReport(downloadLink,filename)
+
 #    vReport.append(VMetaReport)
-    hub.generateReport(VMetaReport)
+
     # Sometimes it can take some time for the report to run.
     # We will check with the hub once per second to see if the report is complete
     # We know that the report is complete when the finished at key has a time value and
     # not an empty string.
-    report = ''
-    reportsList = hub.getReports(VMetaReport)
-    while report is not 'done':
-        mostRecentReport = reportsList['items'][0]
-        if 'finishedAt'or 'updatedAt' in mostRecentReport:
-            report = 'done'
-        else:
-            time.sleep(1)
-    for i in range(len(reportsList)):
-        mostRecentReport = reportsList['items'][i]
-        downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
-        hub.downloadReport(downloadLink)
+
+
+#

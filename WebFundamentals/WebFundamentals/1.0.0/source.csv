@@ -1,0 +1,5 @@
+Component id,Version id,Origin id,Component name,Component version name,Component origin version name,Match type,Match content,Path,Archive context,Usage,Adjusted,Component policy status,Overridden By,Origin name,Origin name id
+c50b5769-6437-478e-bf6b-5867899511b8,959058a1-d9da-4d7f-9993-611e5b85a89c,,dash-checkbox,1.0.0,,Exact,,src/content/en/fundamentals/web-components/examples/images/,,DYNAMICALLY_LINKED,false,,,,
+e4519f29-73c6-45e3-80b0-e5e8647ed277,c9756b91-c82e-44e7-842f-1e1f9fc327a2,,jQuery,2.1.1,,Exact,,gae/scripts/jquery-2.1.1.min.js,,DYNAMICALLY_LINKED,false,,,,
+1c0cbb4b-eadd-48d1-b4ba-07de4d4efb6b,fbde2dbd-b37b-4240-aaaf-b005c335f068,,lpanel,lpanel-20060506-b,,Files Modified,,src/content/en/shows/ttt/series-2/images/es2015/,,DYNAMICALLY_LINKED,false,,,,
+1c0cbb4b-eadd-48d1-b4ba-07de4d4efb6b,fbde2dbd-b37b-4240-aaaf-b005c335f068,,lpanel,lpanel-20060506-b,,Files Modified,,src/content/en/updates/images/2017/04/macos-notifications/,,DYNAMICALLY_LINKED,false,,,,
