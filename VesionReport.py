@@ -59,11 +59,11 @@ for j in range(len(reportLink)):
             mostRecentReport = reportsListjson['items'][0]
             if 'finishedAt' in mostRecentReport:
                 report = 'done'
-                break
             else:
                 time.sleep(1)
+    time.sleep(1)
     if len(reportsList['items']) > 0:
-        for i in range(len(reportsList)):
+        for i in range(0,len(reportsList)-1):
             mostRecentReport = reportsList['items'][i]
             downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
             filename = (projectName +".zip")
