@@ -44,7 +44,7 @@ for i in range(len(projectData['items'])):
             for j in range(len(groupsjson['items'])):
                 groupuser = groupsjson['items'][j]['userName']
                 gname.append(groupuser)
-
+    userName = list(set(uname + gname))
 #Get link to version
     VersionLink = hub.getLink(project_metaData, 'versions')
 #From the version JSON from Hub.
@@ -81,10 +81,12 @@ for i in range(len(projectData['items'])):
                 if 'finishedAt' in mostRecentReport:
                     downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
                     filename = mostRecentReport['fileName']
-                    dest = "/nfs/blackduck/%s/%s/%s/reports/%s" % (userName, projectName, ProjectVersion, filename)
-                    print("Generating new report for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
-                    hub.downloadReport(downloadLink, filename)
-                    report = 'done'
+                    for j in range(len(userName)):
+                        uName = userName[i]
+                        dest = "/nfs/blackduck/%s/%s/%s/reports/%s" %(uName,projectName,ProjectVersion,filename)
+                        print("Generating new report for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
+                        hub.downloadReport(downloadLink, filename)
+                        report = 'done'
                 else:
                     time.sleep(1)
                     reportsListjson = hub.getReports(VMetaReport)
@@ -95,7 +97,8 @@ for i in range(len(projectData['items'])):
                     mostRecentReport = reportsList['items'][i]
                     downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
                     filename = mostRecentReport['fileName']
-                    userName = list(set(uname)|(gname))
-                    dest = "/nfs/blackduck/%s/%s/%s/reports/%s" % (userName,projectName,ProjectVersion,filename)
-                    print("Report already exits, download exiting one for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion,filename))
-                    hub.downloadReport(downloadLink,filename)
+                    for j in range(len(userName)):
+                        uName = userName[i]
+                        dest = "/nfs/blackduck/%s/%s/%s/reports/%s" % (uName,projectName,ProjectVersion,filename)
+                        print("Report already exits, download exiting one for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion,filename))
+#                        hub.downloadReport(downloadLink,filename)

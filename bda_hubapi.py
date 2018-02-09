@@ -174,7 +174,6 @@ class HubAPI:
     def getgroups( self,groupid,limit=1000, offset=0,sort='',q=''):
         payload = {'limit':limit, 'offset':offset, 'sort':sort, 'q':q}
         url_group = ("/api/usergroups/%s/users"%(groupid))
-        print(url_group)
         response = self.aSession.get(self.urlCompose(url_group), params=payload)
         if response.ok:
             return response.json()
