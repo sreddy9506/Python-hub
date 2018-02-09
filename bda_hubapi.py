@@ -63,7 +63,7 @@ class HubAPI:
 
     #Sends request to project endpoint. Parameters are optional and mapped directly
     # from API documentation.
-    def getProjects( self, limit=100, offset=0,sort='',q=''):
+    def getProjects( self, limit=1000, offset=0,sort='',q=''):
         payload = {'limit':limit, 'offset':offset, 'sort':sort, 'q':q}
         response = self.aSession.get(self.urlCompose('api/projects'), params=payload)
         if response.ok:
@@ -75,7 +75,7 @@ class HubAPI:
     #Sends request to version endpoint for a given project.
     #This endpoint will be retrived from the project response data and passed
     # directly here as projectURL.
-    def getVersions( self, projectURL, limit=100, offset=0, sort='', q=''):
+    def getVersions( self, projectURL, limit=1000, offset=0, sort='', q=''):
         payload = {'limit':limit, 'offset':offset,'sort':sort, 'q':q}
         response = self.aSession.get(projectURL, params=payload)
         if response.ok:
@@ -110,7 +110,7 @@ class HubAPI:
 
     #Sends request to list all user's. Parameters are optional and mapped directly
     # from API documentation.
-    def getUsers( self, limit=100, offset=0,sort='',q=''):
+    def getUsers( self, limit=1000, offset=0,sort='',q=''):
         payload = {'limit':limit, 'offset':offset, 'sort':sort, 'q':q}
         response = self.aSession.get(self.urlCompose('api/users'), params=payload)
         if response.ok:
@@ -160,3 +160,24 @@ class HubAPI:
             else:
                 print('Bad response in healthCheckreadiness()')
                 return response.json()
+    #User for specific project
+    def getusergroups( self, projectURL, limit=1000, offset=0, sort='', q=''):
+        payload = {'limit':limit, 'offset':offset,'sort':sort, 'q':q}
+        response = self.aSession.get(projectURL, params=payload)
+        if response.ok:
+            return response.json()
+        else:
+            print('Bad response in getVersions')
+            return response.json()
+
+    #Usergroups for specific projects
+    def getgroups( self,groupid,limit=1000, offset=0,sort='',q=''):
+        payload = {'limit':limit, 'offset':offset, 'sort':sort, 'q':q}
+        url_group = ("/api/usergroups/%s/users"%(groupid))
+        print(url_group)
+        response = self.aSession.get(self.urlCompose(url_group), params=payload)
+        if response.ok:
+            return response.json()
+        else:
+            print('Bad response in getProjects')
+            return response.json()
