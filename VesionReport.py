@@ -61,21 +61,12 @@ for j in range(len(reportLink)):
                 report = 'done'
             else:
                 time.sleep(1)
-    time.sleep(1)
+                reportsListjson = hub.getReports(VMetaReport)
+                mostRecentReport = reportsListjson['items'][0]
     if len(reportsList['items']) > 0:
         for i in range(0,len(reportsList)-1):
             mostRecentReport = reportsList['items'][i]
             downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
-            filename = (projectName +".zip")
+            filename = mostRecentReport['fileName']
             print(filename)
             hub.downloadReport(downloadLink,filename)
-
-#    vReport.append(VMetaReport)
-
-    # Sometimes it can take some time for the report to run.
-    # We will check with the hub once per second to see if the report is complete
-    # We know that the report is complete when the finished at key has a time value and
-    # not an empty string.
-
-
-#
