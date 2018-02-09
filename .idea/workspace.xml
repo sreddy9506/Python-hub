@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="66f5749d-1930-41f5-86dd-ebf1f64589c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/VesionReport.py" afterPath="$PROJECT_DIR$/VesionReport.py" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals/WebFundamentals/1.0.0/components.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals/WebFundamentals/1.0.0/scans.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals/WebFundamentals/1.0.0/security.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals/WebFundamentals/1.0.0/source.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals/WebFundamentals/1.0.0/version.csv" afterPath="" />
       <change beforePath="$PROJECT_DIR$/bda_hubapi.py" afterPath="$PROJECT_DIR$/bda_hubapi.py" />
-      <change beforePath="$PROJECT_DIR$/chrome.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/getVersionReport.py" afterPath="$PROJECT_DIR$/getVersionReport.py" />
-      <change beforePath="$PROJECT_DIR$/hrome.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/report.zip" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -95,8 +85,8 @@
       <file leaf-file-name="VesionReport.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VesionReport.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
-              <caret line="96" column="28" lean-forward="false" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+            <state relative-caret-position="504">
+              <caret line="92" column="45" lean-forward="true" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="45" />
               <folding>
                 <element signature="e#101#130#0" expanded="true" />
               </folding>
@@ -117,8 +107,8 @@
       <file leaf-file-name="bda_hubapi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bda_hubapi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="104" column="8" lean-forward="false" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
+            <state relative-caret-position="3604">
+              <caret line="106" column="26" lean-forward="false" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -164,8 +154,8 @@
         <option value="$PROJECT_DIR$/getprojects.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/getVersionReport.py" />
-        <option value="$PROJECT_DIR$/bda_hubapi.py" />
         <option value="$PROJECT_DIR$/VesionReport.py" />
+        <option value="$PROJECT_DIR$/bda_hubapi.py" />
       </list>
     </option>
   </component>
@@ -874,16 +864,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bda_hubapi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="104" column="8" lean-forward="false" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
+        <state relative-caret-position="3604">
+          <caret line="106" column="26" lean-forward="false" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VesionReport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="96" column="28" lean-forward="false" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+        <state relative-caret-position="504">
+          <caret line="92" column="45" lean-forward="true" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="45" />
           <folding>
             <element signature="e#101#130#0" expanded="true" />
           </folding>

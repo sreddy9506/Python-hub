@@ -81,6 +81,7 @@ for i in range(len(projectData['items'])):
                 if 'finishedAt' in mostRecentReport:
                     downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
                     filename = mostRecentReport['fileName']
+                    dest = "/nfs/blackduck/%s/%s/%s/reports/%s" % (userName, projectName, ProjectVersion, filename)
                     print("Generating new report for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
                     hub.downloadReport(downloadLink, filename)
                     report = 'done'
@@ -94,6 +95,7 @@ for i in range(len(projectData['items'])):
                     mostRecentReport = reportsList['items'][i]
                     downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
                     filename = mostRecentReport['fileName']
-                    dest = ""
+                    userName = list(set(uname)|(gname))
+                    dest = "/nfs/blackduck/%s/%s/%s/reports/%s" % (userName,projectName,ProjectVersion,filename)
                     print("Report already exits, download exiting one for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion,filename))
                     hub.downloadReport(downloadLink,filename)

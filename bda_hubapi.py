@@ -104,7 +104,7 @@ class HubAPI:
     #Downloads the report from reportURL to dest
     def downloadReport(self, reportURL, dest=''):
         response = self.aSession.get(reportURL)
-        with open(dest, 'wb') as output:
+        with open(dest, 'rb') as output:
             for chunk in response.iter_content(2000):
                 output.write(chunk)
 
