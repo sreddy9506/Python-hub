@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66f5749d-1930-41f5-86dd-ebf1f64589c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/VesionReport.py" afterPath="$PROJECT_DIR$/VesionReport.py" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals-1.0.0-Feb-7-2018-15-49-08-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals-cdt-pup-Feb-9-2018-04-54-56-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebFundamentals-webpack-updates-Feb-9-2018-04-55-26-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bda_hubapi.py" afterPath="$PROJECT_DIR$/bda_hubapi.py" />
-      <change beforePath="$PROJECT_DIR$/chrome-1.0.0-Feb-9-2018-03-53-25-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/chrome-1.0.0-Feb-9-2018-05-12-56-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/skia1.0.0-1.0.0-Feb-9-2018-04-47-56-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/skia1.0.0-2.0.0-Feb-9-2018-04-48-26-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/skia2.0.0-2.0.0-Feb-9-2018-04-53-56-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sriramabFirefox-53.0.3-Feb-9-2018-04-58-36-_00_00.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sriramabFirefox-58.0.2-Feb-9-2018-05-00-07-_00_00.zip" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -96,8 +84,8 @@
       <file leaf-file-name="VesionReport.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VesionReport.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="47" />
+            <state relative-caret-position="4420">
+              <caret line="130" column="29" lean-forward="false" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
               <folding>
                 <element signature="e#101#130#0" expanded="true" />
               </folding>
@@ -118,8 +106,8 @@
       <file leaf-file-name="bda_hubapi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bda_hubapi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4794">
-              <caret line="150" column="32" lean-forward="true" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
+            <state relative-caret-position="290">
+              <caret line="142" column="8" lean-forward="false" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -332,18 +320,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2869" y="-11" width="2902" height="1582" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.615222" sideWeight="0.30972221" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36575052" sideWeight="0.30972221" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.49635416" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25863284" sideWeight="0.840625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.615222" sideWeight="0.69027776" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36575052" sideWeight="0.69027776" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -370,18 +357,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/VesionReport.py</url>
-          <line>125</line>
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/VesionReport.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/VesionReport.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="201" />
+          <line>131</line>
+          <option name="timeStamp" value="222" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -394,7 +371,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="202" />
+      <option name="time" value="223" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -403,7 +380,44 @@
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>break</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>ENDPOINT ='https://bdhub-01.bdhub.crate.farm:443' USERNAME = 'sysadmin' PASSWORD = 'blackduck' ##### +++++++++++++++++++++++++++++++ #Create an instance of HubAPI with your endpoint hub = HubAPI(ENDPOINT) #Authenticate with your username and password hub.authenticate(USERNAME, PASSWORD) projectData = hub.getProjects() # Get meta section for parseing #Python dictionarys make it easy to traverse JSON data #In this case we want the '_meta' section from the first entry of the 'items' list for i in range(len(projectData['items'])):     projectName = projectData['items'][i]['name']     projectId = projectData['items'][i]['_meta']['href']     totalProjects = projectData['totalCount']     deleteProject = hub.deleteProject(projectId)     print(&quot;Total count of projects on hub: %s &quot;% (totalProjects))     project_metaData = projectData['items'][i]['_meta'] #Get User data here     user = hub.getLink(project_metaData, 'users')     userData = hub.getusergroups(user)     usercheck = userData['errorMessage']     uname = []     if 'Not Found' in usercheck:         print(&quot;suc&quot;)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>if 'Not Found' in usercheck:         print(&quot;suc&quot;)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>if 'Not Found' in userData['errorMessage']:         print(&quot;suc&quot;)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>if 'Not Found' in userData['errorMessage']:</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>if 'Not Found' in userData['errorMessage'];</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>if 'Not Found' in userData['errorMessage']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>CodeLocationId[u'items'][0][u'_meta'][u'href']</expression-string>
         <language-id>Python</language-id>
@@ -416,41 +430,6 @@
       </expression>
       <expression>
         <expression-string>versionData[u'items'][0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>versionData[u'items'][1][u'_meta'][u'href']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>hub</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>meta[u'items'][0][u'_meta'][u'href']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>versionData[u'items'][0][u'_meta'][u'links']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>project_metaData[u'links'][1][u'href']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>project_metaData[u'links'][0][u'href']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>project_metaData[u'href']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -916,8 +895,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bda_hubapi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4794">
-          <caret line="150" column="32" lean-forward="true" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
+        <state relative-caret-position="290">
+          <caret line="142" column="8" lean-forward="false" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -926,8 +905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VesionReport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="47" />
+        <state relative-caret-position="4420">
+          <caret line="130" column="29" lean-forward="false" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
           <folding>
             <element signature="e#101#130#0" expanded="true" />
           </folding>

@@ -20,33 +20,39 @@ for i in range(len(projectData['items'])):
     projectName = projectData['items'][i]['name']
     projectId = projectData['items'][i]['_meta']['href']
     totalProjects = projectData['totalCount']
-    deleteProject = hub.deleteProject(projectId)
     print("Total count of projects on hub: %s "% (totalProjects))
+    print("project Name : "+projectName)
     project_metaData = projectData['items'][i]['_meta']
 #Get User data here
     user = hub.getLink(project_metaData, 'users')
     userData = hub.getusergroups(user)
     uname = []
-    for i in range(len(userData['items'])):
-        ProjectVersion = userData['items'][i]['name']
-        uname.append(ProjectVersion)
+    if userData['totalCount'] < 1:
+        print("No User Assigned to this project")
+    else:
+        for i in range(len(userData['items'])):
+            ProjectVersion = userData['items'][i]['name']
+            uname.append(ProjectVersion)
 
 # Get group data here
     usergroup = hub.getLink(project_metaData, 'usergroups')
     groupData = hub.getusergroups(usergroup)
     groupid = []
     gname =[]
-    for i in range(len(groupData['items'])):
-        ProjectVersion = groupData['items'][i]['group']
-        url = ProjectVersion
-        id=url.split("/")[-1:]
-        groupid.append(id)
-        for i in range(len(groupid)):
-            gid = groupid[i][0]
-            groupsjson = hub.getgroups(gid)
-            for j in range(len(groupsjson['items'])):
-                groupuser = groupsjson['items'][j]['userName']
-                gname.append(groupuser)
+    if groupData['totalCount'] < 1:
+        print("No Users Group Assigned to the this project")
+    else:
+        for i in range(len(groupData['items'])):
+            ProjectVersion = groupData['items'][i]['group']
+            url = ProjectVersion
+            id=url.split("/")[-1:]
+            groupid.append(id)
+            for i in range(len(groupid)):
+                gid = groupid[i][0]
+                groupsjson = hub.getgroups(gid)
+                for j in range(len(groupsjson['items'])):
+                    groupuser = groupsjson['items'][j]['userName']
+                    gname.append(groupuser)
     userName = list(set(uname + gname))
 #Get link to version
     VersionLink = hub.getLink(project_metaData, 'versions')
@@ -118,9 +124,9 @@ for i in range(len(projectData['items'])):
                     print("Report deleted: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
                     report = 'done'
         #####Delete CodeLocations
-        CodelocationsURL = CodeLocationId[u'items'][0][u'_meta'][u'href']
-        deleteCodeLocation = hub.deleteCodeLocation(CodelocationsURL)
-        print("Deleted Codelocation for version" +ProjectVersion)
+    CodelocationsURL = CodeLocationId[u'items'][0][u'_meta'][u'href']
+    deleteCodeLocation = hub.deleteCodeLocation(CodelocationsURL)
+    print("Deleted Codelocation for version :" +ProjectVersion)
     deleteProject = hub.deleteProject(projectId)
-    print ("Deleted project" +projectName)
+    print ("Deleted project :" +projectName)
     print ("skia")
