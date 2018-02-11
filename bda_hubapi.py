@@ -1,5 +1,5 @@
 import requests
-
+from urlparse import urlparse
 #A class containing API Methods for Black Duck Hub
 # For educational purposes only
 class HubAPI:
@@ -101,10 +101,17 @@ class HubAPI:
             return response.json()
         else:
             print("Error: bad request in getReports")
-    #Downloads the report from reportURL to dest
-    def downloadReport(self, reportURL, dest=''):
+
+    def getcodelocation( self, reportURL):
         response = self.aSession.get(reportURL)
-        with open(dest, 'rb') as output:
+        if response.ok:
+            return response.json()
+        else:
+            print("Error: bad request in getReports")
+    #Downloads the report from reportURL to dest
+    def downloadReport(self, reportURL, dest):
+        response = self.aSession.get(reportURL)
+        with open(dest, 'wb') as output:
             for chunk in response.iter_content(2000):
                 output.write(chunk)
 
@@ -133,17 +140,29 @@ class HubAPI:
             return response.text
 
     # delete a project
-    def deleteProject( self ):
-        x = raw_input("pls, enter your project name that you wan to delete \n")
-        DELETE_URL = "api/projects/%s"%x
-        token = {'x-csrf-token': self.CSRF}
-        print("https://bdhub-01.bdhub.crate.farm:443/api/projects/%s"%x)
+    def deleteProject( self,CodelocationsURL ):
+        DEL = urlparse(CodelocationsURL)
+        DELETE_URL = DEL.path
         response = self.aSession.delete(self.urlCompose(DELETE_URL),headers={'x-csrf-token':self.CSRF})
         if response.ok:
             return response.text
         else:
             print("Error: bad request in deleteproject()")
             return response.text
+
+    #delete a Report
+    def deleteReport( self,deletejson ):
+        DEL = urlparse(deletejson)
+        DELETE_URL = DEL.path
+        token = {'x-csrf-token': self.CSRF}
+        response = self.aSession.delete(self.urlCompose(DELETE_URL),headers={'x-csrf-token':self.CSRF})
+
+    #delete CodeLocation
+    def deleteCodeLocation( self,CodelocationsURL ):
+        DEL = urlparse(CodelocationsURL)
+        DELETE_URL = DEL.path
+        token = {'x-csrf-token': self.CSRF}
+        response = self.aSession.delete(self.urlCompose(DELETE_URL),headers={'x-csrf-token':self.CSRF})
 
     def healthCheckliveness( self ):
             response = self.aSession.get(self.urlCompose('api/health-checks/liveness'), headers={'x-csrf-token':self.CSRF})

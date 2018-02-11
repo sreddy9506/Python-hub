@@ -2,6 +2,7 @@
 #Downloads and scp to /nfs/blackduck/user...
 from bda_hubapi import HubAPI
 import time
+from urlparse import urlparse
 ### Local Parameters == You must update these for this script to run
 ENDPOINT ='https://bdhub-01.bdhub.crate.farm:443'
 USERNAME = 'sysadmin'
@@ -17,7 +18,9 @@ projectData = hub.getProjects()
 #In this case we want the '_meta' section from the first entry of the 'items' list
 for i in range(len(projectData['items'])):
     projectName = projectData['items'][i]['name']
+    projectId = projectData['items'][i]['_meta']['href']
     totalProjects = projectData['totalCount']
+    deleteProject = hub.deleteProject(projectId)
     print("Total count of projects on hub: %s "% (totalProjects))
     project_metaData = projectData['items'][i]['_meta']
 #Get User data here
@@ -72,6 +75,8 @@ for i in range(len(projectData['items'])):
     for j in range(len(reportLink)):
         VMetaReport = hub.getLink(reportLink[j]['_meta'], 'versionReport')
         reportsList = hub.getReports(VMetaReport)
+        CodeLocations = hub.getLink(reportLink[j]['_meta'], 'codelocations')
+        CodeLocationId = hub.getcodelocation(CodeLocations)
         new_report = reportsList
         if len(reportsList['items']) == 0:
             hub.generateReport(VMetaReport)
@@ -81,12 +86,16 @@ for i in range(len(projectData['items'])):
                 if 'finishedAt' in mostRecentReport:
                     downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
                     filename = mostRecentReport['fileName']
+                    print("Generating new report for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
                     for j in range(len(userName)):
-                        uName = userName[i]
+                        uName = userName[j]
                         dest = "/nfs/blackduck/%s/%s/%s/reports/%s" %(uName,projectName,ProjectVersion,filename)
-                        print("Generating new report for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
                         hub.downloadReport(downloadLink, filename)
-                        report = 'done'
+                    #Delete Report
+                    print("Report deleted: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
+                    deletejson = mostRecentReport['_meta']['href']
+                    deleteReport = hub.deleteReport(deletejson)
+                    report = 'done'
                 else:
                     time.sleep(1)
                     reportsListjson = hub.getReports(VMetaReport)
@@ -97,8 +106,21 @@ for i in range(len(projectData['items'])):
                     mostRecentReport = reportsList['items'][i]
                     downloadLink = hub.getLink(mostRecentReport['_meta'], 'download')
                     filename = mostRecentReport['fileName']
+                    print("Report already exits, download exiting one for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
                     for j in range(len(userName)):
-                        uName = userName[i]
-                        dest = "/nfs/blackduck/%s/%s/%s/reports/%s" % (uName,projectName,ProjectVersion,filename)
-                        print("Report already exits, download exiting one for project: %s  version: %s  reportName: %s " % (projectName, ProjectVersion,filename))
-#                        hub.downloadReport(downloadLink,filename)
+                        uName = userName[j]
+                        dest = "C:\Users\srkontha\Desktop\upg\ubdhub\%s\%s\%s\eports\%s" % (uName,projectName,ProjectVersion,filename)
+                        #print(dest)
+                        hub.downloadReport(downloadLink,filename)
+                    #Delete Report
+                    deletejson = mostRecentReport['_meta']['href']
+                    deleteReport = hub.deleteReport(deletejson)
+                    print("Report deleted: %s  version: %s  reportName: %s " % (projectName, ProjectVersion, filename))
+                    report = 'done'
+        #####Delete CodeLocations
+        CodelocationsURL = CodeLocationId[u'items'][0][u'_meta'][u'href']
+        deleteCodeLocation = hub.deleteCodeLocation(CodelocationsURL)
+        print("Deleted Codelocation for version" +ProjectVersion)
+    deleteProject = hub.deleteProject(projectId)
+    print ("Deleted project" +projectName)
+    print ("skia")
